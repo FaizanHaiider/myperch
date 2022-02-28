@@ -1,0 +1,38 @@
+.list-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px 20px;
+}
+
+.list-details-header {
+  display: flex;
+  gap: 0px 10px;
+}
+
+.form-check-input {
+  margin-top: 8px;
+}
+
+.list-item {
+  display: flex;
+  gap: 0px 10px;
+  justify-content: center;
+}
+
+.line {
+  text-decoration: line-through;
+  background-color: #f8f8f8;
+}
+
+.unline {
+  text-decoration: null;
+}
+
+.list-details-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+  gap: 0px 16px;
+  background-color: rgba(243, 243, 243, 0.693);
+}

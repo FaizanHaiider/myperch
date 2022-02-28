@@ -1,0 +1,66 @@
+<div class="container lists-container" style="margin-bottom: 72px;">
+
+  <div class="lists-searchbar-container border-bottom">
+
+    <div class="input-group mb-3" style="margin-bottom: 0rem !important;">
+      <input class="form-control lists-searchbar" type="text" placeholder="Search Title" (keyup.enter)="search($event)">
+      <span class="input-group-text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </span>
+    </div>    
+  </div>
+
+
+  <h3 class="fw-light" translate="">Your Lists</h3>
+  <div class="card-group lists-card-container" >
+    <div class="card shadow-sm" *ngFor="let item of lists"(click)="routeTo(item.ListID)">
+
+      <div class="card-body row">
+
+        <h5 class="text-truncate col-7">{{item.ListName}}</h5>
+
+        <div style="display: flex; gap: 0px 16px;" class="col-4">
+          <span>{{item.Items.length}} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-cart"
+            viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+            </svg>
+          </span>
+
+          <span>1 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-person"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            </svg>
+          </span>
+        </div>
+
+        <span (click)="removeList(item.ListID)" class="col-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-trash" viewBox="0 0 16 16">
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+          </svg>
+        </span>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-fill">
+    <button class="btn btn-dark flex-fill" type="button" (click)="newList()">New List</button>
+  </div>
+
+
+</div>
+
+
